@@ -8,9 +8,9 @@ const app = express();
 
 // const publicFolderPath = path.resolve(__dirname,  './public'); // esta linea se puede hacer tambien asi
 
-const publicFolderPath = path.resolve(__dirname + '/public');  // funciona x path.resolve
+const publicFolderPath = path.resolve(__dirname + '/public');  
 
-app.use(express.static(publicFolderPath));                    // funciona x path.resolve
+app.use(express.static(publicFolderPath));                   
  
 // app.use(express.static(__dirname + '/public'));  // si funciona
 
