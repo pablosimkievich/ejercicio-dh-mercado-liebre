@@ -1,7 +1,5 @@
 const express = require('express');
-
 const path = require('path');
-
 const app = express();
 
 // middlewares
@@ -10,7 +8,7 @@ const app = express();
 
 const publicFolderPath = path.resolve(__dirname + '/public');  
 
-app.use(express.static(publicFolderPath));                   
+app.use(express.static(publicFolderPath));               
  
 // app.use(express.static(__dirname + '/public'));  // si funciona
 
@@ -28,6 +26,8 @@ app.set('puerto', process.env.PORT || 3000);
 //app.listen(process.env.PORT || 3000, function() {
 //    console.log('Servidor corriendo en puerto 3000');
 //})
+app.set(express.urlencoded ( { extended : false })); // para post
+app.set(express.json());    // para el post
 
 app.listen(app.get('puerto'), ()=>console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
 
